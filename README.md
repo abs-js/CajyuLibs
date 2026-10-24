@@ -1,52 +1,49 @@
 # CajyuLibs
 
-**Official libraries for the [Cajyu](https://github.com/abs-js/Cajyu) programming language.**
+**Official libraries for the [Cajyu](https://github.com/abs-js/Cajyu) language.**
 
-Install any library with:
+Install with:
 
 ```bash
-cajyu inst http
-cajyu inst serial
-cajyu inst fs
-cajyu inst math
-```
-
-Then import in your `.cjy` files:
-
-```cajyu
-import Server from CajyuLibs.http
-import print from CajyuLibs.serial
+cajyu inst <name>
 ```
 
 ## Available Libraries
 
-| Library | Description |
-|---------|-------------|
-| `http`  | Real HTTP server with POST handlers, sleep/wake, and static files |
-| `serial`| Console output (`print`, `log`) |
-| `fs`    | File system helpers |
-| `math`  | Basic math operations |
-
-Each library is a standard Node.js module that exports a `CayjuLib` object.
+| Library     | Description                                      |
+|-------------|--------------------------------------------------|
+| `serial`    | Console logging (`print`, `info`, `warn`, `error`, timers) |
+| `fs`        | File system utilities                            |
+| `math`      | Arithmetic, trigonometry, random, helpers        |
+| `http`      | HTTP server with POST handlers, sleep/wake       |
+| `websocket` | WebSocket server and client (depends on `ws`)    |
 
 ## Structure
 
+Each library is a folder containing `main.js` (exports `CayjuLib`) and `package.json`.
+
 ```
 CajyuLibs/
-├── http/
-│   ├── main.js
-│   └── package.json
 ├── serial/
 ├── fs/
-└── math/
+├── math/
+├── http/
+└── websocket/
 ```
+
+## WebSocket note
+
+The `websocket` library depends on the `ws` package.  
+`cajyu inst websocket` will automatically run `npm install` inside the library folder.
 
 ## Contributing
 
-Want to add a new library? Open a PR. Keep the export as:
+Keep the export shape:
 
 ```js
 export const CayjuLib = {
-  // your functions and classes
+  // functions and classes
 };
 ```
+
+Pull requests welcome.

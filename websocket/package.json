@@ -1,0 +1,8 @@
+{
+  "name": "cajyu-websocket",
+  "type": "module",
+  "main": "main.js",
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
