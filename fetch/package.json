@@ -1,0 +1,5 @@
+{
+  "name": "cajyu-fetch",
+  "type": "module",
+  "main": "main.js"
+}

@@ -19,7 +19,12 @@ export const CayjuLib = {
         this.handlers.connection.forEach(fn => fn(ws));
 
         ws.on('message', (data) => {
-          const msg = data.toString();
+          let msg;
+          try {
+            msg = JSON.parse(data.toString());
+          } catch {
+            msg = data.toString();
+          }
           this.handlers.message.forEach(fn => fn(msg, ws));
         });
 
@@ -35,14 +40,14 @@ export const CayjuLib = {
     }
 
     broadcast(message) {
-      const data = typeof message === 'string' ? message : JSON.stringify(message);
+      const data = JSON.stringify(message);
       for (const client of this.clients) {
         if (client.readyState === WebSocket.OPEN) client.send(data);
       }
     }
 
     send(ws, message) {
-      const data = typeof message === 'string' ? message : JSON.stringify(message);
+      const data = JSON.stringify(message);
       if (ws.readyState === WebSocket.OPEN) ws.send(data);
     }
 
@@ -51,5 +56,10 @@ export const CayjuLib = {
     }
   },
 
-  connect: (url) => new WebSocket(url)
+  connect: (url) => {
+    const ws = new WebSocket(url);
+    const originalSend = ws.send.bind(ws);
+    ws.send = (data) => originalSend(JSON.stringify(data));
+    return ws;
+  }
 };

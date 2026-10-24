@@ -1,0 +1,22 @@
+export const CayjuLib = {
+  length: (s) => String(s).length,
+  upper: (s) => String(s).toUpperCase(),
+  lower: (s) => String(s).toLowerCase(),
+  trim: (s) => String(s).trim(),
+  split: (s, sep) => String(s).split(sep),
+  join: (arr, sep = '') => arr.join(sep),
+  replace: (s, search, replacement) => String(s).replace(search, replacement),
+  replaceAll: (s, search, replacement) => String(s).replaceAll(search, replacement),
+  includes: (s, search) => String(s).includes(search),
+  startsWith: (s, search) => String(s).startsWith(search),
+  endsWith: (s, search) => String(s).endsWith(search),
+  slice: (s, start, end) => String(s).slice(start, end),
+  substring: (s, start, end) => String(s).substring(start, end),
+  padStart: (s, len, pad = ' ') => String(s).padStart(len, pad),
+  padEnd: (s, len, pad = ' ') => String(s).padEnd(len, pad),
+  reverse: (s) => String(s).split('').reverse().join(''),
+  repeat: (s, n) => String(s).repeat(n),
+  charAt: (s, i) => String(s).charAt(i),
+  indexOf: (s, search) => String(s).indexOf(search),
+  lastIndexOf: (s, search) => String(s).lastIndexOf(search)
+};
