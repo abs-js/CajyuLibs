@@ -60,10 +60,6 @@ export const CayjuLib = {
           res.end('Not found');
         }
       });
-
-      this.server.listen(this.port, () => {
-        console.log(`Server running on port ${this.port}`);
-      });
     }
 
     sleep() {
@@ -74,14 +70,12 @@ export const CayjuLib = {
     post(handler) {
       if (typeof handler === 'function') {
         this.postHandlers.push(handler);
-        console.log('POST handler registered');
       }
     }
 
     file(route, content) {
       const r = route.startsWith('/') ? route : '/' + route;
       this.routes[r] = content;
-      console.log(`Rota registrada: ${r}`);
     }
 
     close() {
@@ -89,6 +83,12 @@ export const CayjuLib = {
         this.server.close();
         this.server = null;
       }
+    }
+
+    start() {
+      this.server.listen(this.port, () => {
+        return `Server running on port ${this.port}`;
+      });
     }
   }
 };
