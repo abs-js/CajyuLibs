@@ -1,4 +1,4 @@
-export const CayjuLib = {
+export const CajyuLib = {
   length: (s) => String(s).length,
   upper: (s) => String(s).toUpperCase(),
   lower: (s) => String(s).toLowerCase(),

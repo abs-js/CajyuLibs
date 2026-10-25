@@ -1,6 +1,6 @@
 import readline from 'readline';
 
-export const CayjuLib = {
+export const CajyuLib = {
   input: (prompt = '') => {
     return new Promise((resolve) => {
       const rl = readline.createInterface({

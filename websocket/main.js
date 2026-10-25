@@ -1,6 +1,6 @@
 import { WebSocketServer, WebSocket } from 'ws';
 
-export const CayjuLib = {
+export const CajyuLib = {
   Server: class {
     constructor(port = 8080) {
       this.port = port;

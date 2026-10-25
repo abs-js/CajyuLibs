@@ -1,4 +1,4 @@
-export const CayjuLib = {
+export const CajyuLib = {
   soma: (a, b) => a + b,
   subtracao: (a, b) => a - b,
   multiplicacao: (a, b) => a * b,

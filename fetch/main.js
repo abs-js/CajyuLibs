@@ -1,4 +1,4 @@
-export const CayjuLib = {
+export const CajyuLib = {
   fetch: async (url, headers = {}, body = null, callback) => {
     const start = Date.now();
     try {

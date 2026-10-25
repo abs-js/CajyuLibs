@@ -1,6 +1,6 @@
 import http from 'http';
 
-export const CayjuLib = {
+export const CajyuLib = {
   Server: class {
     constructor(port = 3000) {
       this.port = port;

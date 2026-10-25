@@ -1,6 +1,6 @@
 import { execSync } from 'child_process';
 
-export const CayjuLib = {
+export const CajyuLib = {
   exec: (command) => {
     try {
       return execSync(command, { encoding: 'utf-8' }).trim();

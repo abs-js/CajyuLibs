@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export const CayjuLib = {
+export const CajyuLib = {
   readFile: (p, encoding = 'utf-8') => fs.readFileSync(p, encoding),
   writeFile: (p, content) => fs.writeFileSync(p, content),
   appendFile: (p, content) => fs.appendFileSync(p, content),

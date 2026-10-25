@@ -1,4 +1,4 @@
-export const CayjuLib = {
+export const CajyuLib = {
   parse: (str) => {
     try { return JSON.parse(str); }
     catch (e) { throw new Error('Invalid JSON: ' + e.message); }

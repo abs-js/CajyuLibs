@@ -1,4 +1,4 @@
-export const CayjuLib = {
+export const CajyuLib = {
   print: (...args) => console.log(...args),
   log: (level, ...args) => {
     const levels = { info: 'INFO', warn: 'WARN', error: 'ERROR', debug: 'DEBUG' };

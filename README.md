@@ -51,6 +51,6 @@ Messages are automatically `JSON.stringify`ed when sending and `JSON.parse`d whe
 
 ## Structure
 
-Each library is a folder with `main.js` (exports `CayjuLib`) and `package.json`.
+Each library is a folder with `main.js` (exports `CajyuLib`) and `package.json`.
 
 Pull requests welcome.
