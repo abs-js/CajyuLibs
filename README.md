@@ -1,5 +1,9 @@
 # CajyuLibs
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/abs-js/Cajyu/main/logos/logo-256.png" alt="Cajyu Logo" width="128">
+</p>
+
 **Official libraries for the [Cajyu](https://github.com/abs-js/Cajyu) language.**
 
 Install with:
