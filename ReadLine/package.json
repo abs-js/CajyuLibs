@@ -1,0 +1,5 @@
+{
+  "name": "cajyu-readline",
+  "type": "module",
+  "main": "main.js"
+}
