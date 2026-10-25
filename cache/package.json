@@ -1,0 +1,5 @@
+{
+  "name": "cajyu-cache",
+  "type": "module",
+  "main": "main.js"
+}

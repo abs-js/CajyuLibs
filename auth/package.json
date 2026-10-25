@@ -1,0 +1,5 @@
+{
+  "name": "cajyu-auth",
+  "type": "module",
+  "main": "main.js"
+}
