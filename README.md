@@ -16,41 +16,50 @@ cajyu inst <name>
 
 | Library     | Description |
 |-------------|-------------|
-| `serial`    | Console logging (`print`, `info`, `warn`, `error`, timers) |
+| `serial`    | Console logging |
 | `fs`        | File system utilities |
-| `math`      | Arithmetic, trigonometry, random, helpers |
-| `http`      | HTTP server with POST handlers, sleep/wake |
-| `websocket` | WebSocket server/client that automatically sends and receives JSON |
-| `string`    | String manipulation helpers |
-| `json`      | JSON parse, stringify, get/set by path, merge |
-| `exec`      | Run shell commands and get the output |
-| `fetch`     | HTTP fetch with callback (result + elapsed ms) |
+| `math`      | Math helpers |
+| `http`      | HTTP server |
+| `websocket` | WebSocket (JSON) |
+| `string`    | String helpers |
+| `json`      | JSON helpers |
+| `exec`      | Run shell commands |
+| `fetch`     | HTTP fetch |
+| `SQL`       | SQL connection and queries |
+| `cache`     | In-memory cache with TTL |
+| `auth`      | Hash, Token and Session |
+| `Orgapp`    | Higher-level app framework (routes, middleware, plugins) |
 
-## Usage examples
+## New libraries
 
+### SQL
 ```cajyu
-import exec from CajyuLibs.exec
-var files = exec.exec("ls -a")
-
-import fetch from CajyuLibs.fetch
-fetch.fetch("https://api.example.com", {}, null, fn result, ms {
-  print(result)
-  print("took " + ms + " ms")
-})
-
-import str from CajyuLibs.string
-print(str.upper("hello"))
-
-import json from CajyuLibs.json
-var obj = json.parse('{"a":1}')
+import SQLConn from CajyuLibs.SQL
+const C = new SQLConn({})
+const result = wait C.sendReq("SELECT * FROM users")
+C.close()
 ```
 
-## WebSocket
+### cache
+```cajyu
+import * from CajyuLibs.cache
+const c = cache()
+wait c.set("key", "value")
+wait c.get("key")
+```
 
-Messages are automatically `JSON.stringify`ed when sending and `JSON.parse`d when receiving.
+### Auth
+```cajyu
+import * from CajyuLibs.auth
+var pass = new Hash("secret")
+const ok = wait pass.verify("secret")
+```
 
-## Structure
-
-Each library is a folder with `main.js` (exports `CajyuLib`) and `package.json`.
+### Orgapp
+```cajyu
+import App from CajyuLibs.Orgapp
+const app = new App(server)
+app.get("/", fn req { return "Hello" })
+```
 
 Pull requests welcome.
