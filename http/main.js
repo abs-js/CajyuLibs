@@ -128,6 +128,7 @@ export const CayjuLib = {
       if (this.server) {
         this.server.close();
         this.server = null;
+        console.log(`[http] Closed server http on port ${this.port}`);
       }
     }
 
