@@ -1,5 +1,8 @@
 {
   "name": "cajyu-sql",
   "type": "module",
-  "main": "main.js"
+  "main": "main.js",
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  }
 }
