@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 
-export const CayjuLib = {
+export const CajyuLib = {
   Hash: class {
     constructor(password) {
       this.hash = crypto.createHash('sha256').update(password).digest('hex');
