@@ -1,6 +1,6 @@
 import http from 'http';
 
-export const CayjuLib = {
+export const CajyuLib = {
   App: class {
     constructor(serverOrPort) {
       this.routes = { GET: {}, POST: {}, PUT: {}, DELETE: {} };
